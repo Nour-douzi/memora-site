@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MEMORA — coffrets et cadeaux personnalisés pour exprimer ses émotions.">
+<title>Contact | MEMORA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="index.html">MEM<span>O</span>RA</a>
+    <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a class="" href="index.html">Accueil</a></li>
+      <li><a class="" href="produits.html">Cadeaux</a></li>
+      <li><a class="" href="a-propos.html">À propos</a></li>
+      <li><a class="active" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+
+<main>
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">Accueil → Contact</div>
+    <h1>Parlons de votre cadeau</h1>
+    <p class="lead">Donnez-nous l'occasion, les goûts du destinataire et votre budget : le concept MEMORA est basé sur un accompagnement personnalisé.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container contact-grid">
+    <div class="card">
+      <h2>Comment nous contacter ?</h2>
+      <p style="margin-bottom:18px">Selon le BMC, MEMORA utilise plusieurs canaux pour rester proche de ses clients.</p>
+      <ul class="list">
+        <li>WhatsApp : commandes et conseils rapides.</li>
+        <li>Instagram : présentation des cadeaux et nouveautés.</li>
+        <li>TikTok : idées cadeaux et contenu créatif.</li>
+        <li>Site web : présentation et demande de commande.</li>
+      </ul>
+      <p class="small" style="margin-top:20px">WhatsApp : <strong>23 109 233</strong><br>Email : <strong>nourdouzi2007@gmail.com</strong><br>Instagram : <strong>@Douzi8314</strong></p>
+    </div>
+
+    <div class="card">
+      <h2>Votre demande</h2>
+      <form id="contactForm">
+        <div><label for="name">Nom</label><input id="name" name="name" required placeholder="Votre nom"></div>
+        <div><label for="occasion">Occasion</label>
+          <select id="occasion" name="occasion" required>
+            <option value="">Choisir une occasion</option>
+            <option>Anniversaire</option><option>Mariage</option><option>Réussite / diplôme</option>
+            <option>Fête</option><option>Couple / amoureux</option><option>Cadeau d'entreprise</option><option>Autre</option>
+          </select>
+        </div>
+        <div><label for="budget">Budget</label><input id="budget" name="budget" placeholder="Ex. : à préciser"></div>
+        <div><label for="message">Message</label><textarea id="message" name="message" required placeholder="Décrivez le cadeau que vous recherchez..."></textarea></div>
+        <button class="btn" type="submit">Envoyer la demande</button>
+        <div id="successMessage" class="success">Votre demande a été enregistrée dans cette démonstration. Pour recevoir réellement les messages, il faudra connecter le formulaire à un service ou à un backend.</div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-title">MEMORA</div>
+      <p>Pour ceux qui expriment leurs émotions par un cadeau.</p>
+    </div>
+    <div>
+      <div class="footer-title">Navigation</div>
+      <p><a href="index.html">Accueil</a></p>
+      <p><a href="produits.html">Cadeaux</a></p>
+      <p><a href="a-propos.html">À propos</a></p>
+      <p><a href="contact.html">Contact</a></p>
+    </div>
+    <div>
+      <div class="footer-title">Nos canaux</div>
+      <p>Site web · Instagram · TikTok · WhatsApp</p>
+      <p class="small">Les coordonnées réelles sont à compléter avant publication.</p>
+    </div>
+  </div>
+  <div class="container copyright">© 2026 MEMORA — Projet étudiant.</div>
+</footer>
+<button class="top" aria-label="Retour en haut">↑</button>
+<script src="script.js"></script>
+
+</body>
+</html>

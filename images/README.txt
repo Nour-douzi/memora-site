@@ -1,0 +1,1 @@
+Placez ici les vraies photos des cadeaux. Les chemins HTML devront utiliser exactement les noms des fichiers ajoutés.
