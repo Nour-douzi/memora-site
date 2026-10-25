@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mon compte | MEMORA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="compte">
+<header>
+  <div class="container nav">
+    <a class="logo" href="index.html">MEM<span>O</span>RA</a>
+    <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="produits.html">Cadeaux</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="panier.html">Panier (<span id="cart-count">0</span>)</a></li>
+      <li><a class="active" href="compte.html" id="nav-account">Compte</a></li>
+      <li id="nav-admin" hidden><a href="admin.html">Admin</a></li>
+    </ul>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">Accueil → Compte</div>
+    <h1>Mon espace</h1>
+    <p class="lead">Identité et historique des commandes de démonstration.</p>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div id="accountFlash" class="flash" hidden></div>
+    <div class="card" id="accountIdentity"></div>
+    <h2 style="margin:28px 0 14px">Mes commandes</h2>
+    <div id="orderHistory"></div>
+  </div>
+</section>
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script defer src="supabase-client.js"></script>
+<script defer src="supabase-shop.js"></script>
+<script defer src="script.js"></script>
+</body>
+</html>

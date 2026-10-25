@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panier | MEMORA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="panier">
+<header>
+  <div class="container nav">
+    <a class="logo" href="index.html">MEM<span>O</span>RA</a>
+    <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="produits.html">Cadeaux</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a class="active" href="panier.html">Panier (<span id="cart-count">0</span>)</a></li>
+      <li><a href="login.html" id="nav-account">Connexion</a></li>
+      <li id="nav-admin" hidden><a href="admin.html">Admin</a></li>
+    </ul>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">Accueil → Panier</div>
+    <h1>Mon panier</h1>
+    <p class="lead">Les articles restent dans le navigateur jusqu'à la validation réussie.</p>
+  </div>
+</section>
+<section>
+  <div class="container" id="cart-container"></div>
+</section>
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script defer src="supabase-client.js"></script>
+<script defer src="supabase-shop.js"></script>
+<script defer src="script.js"></script>
+</body>
+</html>

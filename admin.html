@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Administration | MEMORA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin">
+<header>
+  <div class="container nav">
+    <a class="logo" href="index.html">MEM<span>O</span>RA</a>
+    <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="produits.html">Cadeaux</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="panier.html">Panier (<span id="cart-count">0</span>)</a></li>
+      <li><a href="compte.html" id="nav-account">Compte</a></li>
+      <li id="nav-admin" hidden><a class="active" href="admin.html">Admin</a></li>
+    </ul>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">Accueil → Admin</div>
+    <h1>Administration</h1>
+    <p class="lead">Produits et commandes. Les droits viennent de la table user_roles, pas du navigateur.</p>
+  </div>
+</section>
+<section>
+  <div class="container" id="adminApp">
+    <div id="adminFlash" class="flash" hidden></div>
+    <div class="admin-grid">
+      <div class="card">
+        <h2>Produit</h2>
+        <form id="productForm">
+          <input type="hidden" id="prodId">
+          <label for="prodName">Nom</label>
+          <input id="prodName" required>
+          <label for="prodDesc">Description</label>
+          <textarea id="prodDesc"></textarea>
+          <label for="prodPrice">Prix (DT)</label>
+          <input id="prodPrice" type="number" min="0" step="0.01" required>
+          <label for="prodImage">Image (chemin)</label>
+          <input id="prodImage" placeholder="images/exemple.jpg">
+          <label for="prodCategory">Catégorie budget</label>
+          <select id="prodCategory">
+            <option value="petit">petit</option>
+            <option value="moyen">moyen</option>
+            <option value="premium">premium</option>
+          </select>
+          <label for="prodGroup">Groupe</label>
+          <input id="prodGroup" placeholder="Bijoux">
+          <label><input type="checkbox" id="prodAvailable" checked> Disponible</label>
+          <div class="actions">
+            <button class="btn" type="submit">Enregistrer</button>
+            <button class="btn secondary" type="button" id="resetProduct">Nouveau</button>
+          </div>
+        </form>
+      </div>
+      <div>
+        <h2>Catalogue</h2>
+        <div id="adminProducts"></div>
+        <h2 style="margin-top:28px">Toutes les commandes</h2>
+        <div id="adminOrders"></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script defer src="supabase-client.js"></script>
+<script defer src="supabase-shop.js"></script>
+<script defer src="script.js"></script>
+</body>
+</html>

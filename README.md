@@ -1,4 +1,19 @@
-# MEMORA — site vitrine
+# MEMORA — boutique connectée (TP 3)
+
+Site HTML/CSS/JS publié comme site statique. Auth et données : Supabase. Hébergement : Vercel. Voir `SUPABASE.md` pour les opérations manuelles.
+
+## 1. Arborescence
+- index.html : accueil
+- produits.html : catalogue lu depuis Supabase
+- produit-vedette.html : détail du coffret principal
+- a-propos.html, contact.html
+- signup.html, login.html, verification.html, compte.html
+- panier.html, checkout.html, confirmation.html
+- admin.html : produits et commandes (rôle admin)
+- style.css, script.js, supabase-client.js, supabase-shop.js
+- supabase-setup.sql, supabase-orders.sql, supabase-admin.sql
+- SUPABASE.md : consignes adaptées au projet
+- images/
 
 ## 1. Arborescence
 - index.html : accueil

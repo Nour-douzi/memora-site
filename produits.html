@@ -1,20 +1,41 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="MEMORA — cadeaux personnalisés selon votre budget."><title>Cadeaux | MEMORA</title><link rel="stylesheet" href="style.css"></head><body><header><div class="container nav"><a class="logo" href="index.html">MEM<span>O</span>RA</a><button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button><ul class="nav-links">
-<li><a class="" href="index.html">Accueil</a></li>
-<li><a class="active" href="produits.html">Cadeaux</a></li>
-<li><a class="" href="a-propos.html">À propos</a></li>
-<li><a class="" href="contact.html">Contact</a></li></ul></div></header><main>
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MEMORA — cadeaux personnalisés selon votre budget.">
+<title>Cadeaux | MEMORA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="produits">
+<header>
+  <div class="container nav">
+    <a class="logo" href="index.html">MEM<span>O</span>RA</a>
+    <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a class="active" href="produits.html">Cadeaux</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="panier.html">Panier (<span id="cart-count">0</span>)</a></li>
+      <li><a href="login.html" id="nav-account">Connexion</a></li>
+      <li id="nav-admin" hidden><a href="admin.html">Admin</a></li>
+    </ul>
+  </div>
+</header>
+<main>
 <section class="page-hero">
   <div class="container">
     <div class="breadcrumb">Accueil → Cadeaux</div>
     <h1>Des cadeaux selon votre budget</h1>
-    <p class="lead">Chez MEMORA, le client fixe d'abord son budget. Nous proposons ensuite une composition cohérente, sans inventer un prix magique.</p>
+    <p class="lead">Le catalogue est lu depuis Supabase. Seuls les produits disponibles sont visibles pour un visiteur.</p>
   </div>
 </section>
-
 <section>
   <div class="container">
+    <div id="catalogFlash" class="flash" hidden></div>
     <div class="budget-box">
-      <h2>🎯 Quel est votre budget ?</h2>
+      <h2>Quel est votre budget ?</h2>
       <p>Entrez votre budget en dinars tunisiens et découvrez une première suggestion.</p>
       <form id="budgetForm" style="margin-top:16px">
         <div class="budget-row">
@@ -27,7 +48,6 @@
       </form>
       <div id="budgetResult" class="budget-result"></div>
     </div>
-
     <div class="card" style="margin-bottom:28px">
       <label for="productFilter">Filtrer par catégorie</label>
       <select id="productFilter" style="margin-top:8px;max-width:360px">
@@ -37,518 +57,35 @@
         <option value="premium">Premium</option>
       </select>
     </div>
-
-    <div class="grid-3" id="productGrid">
-      <article class="card product-card" data-category="premium" data-group="Parfums">
-        <img class="product-photo" src="images/parfum-jadore.jpg" alt="Flacon de parfum doré posé devant son coffret" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Parfums</span><h3>Parfum J'adore</h3>
-          <p>Flacon de parfum doré posé devant son coffret. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 350 à 450 DT</div>
-          <div class="source-note">Produit importé : prix indicatif estimé, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="premium" data-group="Parfums">
-        <img class="product-photo" src="images/parfum-my-way.jpg" alt="Flacon de parfum violet posé sur un tissu clair" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Parfums</span><h3>Parfum My Way</h3>
-          <p>Flacon de parfum violet posé sur un tissu clair. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 300 à 400 DT</div>
-          <div class="source-note">Produit importé : prix indicatif estimé, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="premium" data-group="Parfums">
-        <img class="product-photo" src="images/parfum-acqua.jpg" alt="Flacon de parfum noir pour homme" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Parfums</span><h3>Parfum Acqua di Giò</h3>
-          <p>Flacon de parfum noir pour homme. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 300 à 380 DT</div>
-          <div class="source-note">Produit importé : prix indicatif estimé, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="premium" data-group="Parfums">
-        <img class="product-photo" src="images/parfum-chanel.jpg" alt="Flacon de parfum entouré de roses blanches" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Parfums</span><h3>Parfum N°5 et roses</h3>
-          <p>Flacon de parfum entouré de roses blanches. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 400 à 520 DT</div>
-          <div class="source-note">Produit importé : prix indicatif estimé, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="premium" data-group="Parfums">
-        <img class="product-photo" src="images/parfums-collection.jpg" alt="Plusieurs flacons de parfum disposés sur un tissu blanc" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Parfums</span><h3>Collection de parfums</h3>
-          <p>Plusieurs flacons de parfum disposés sur un tissu blanc. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 150 à 300 DT</div>
-          <div class="source-note">Produit importé : prix indicatif estimé, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Parfums">
-        <img class="product-photo" src="images/huiles-parfumees.jpg" alt="Flacons d'huile parfumée entourés de petites fleurs" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Parfums</span><h3>Huiles parfumées</h3>
-          <p>Flacons d'huile parfumée entourés de petites fleurs. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 20 à 45 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="petit" data-group="Chocolats">
-        <img class="product-photo" src="images/chocolats-tablettes.jpg" alt="Tablettes de chocolat noir, au lait et blanc dans des assiettes" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Chocolats</span><h3>Tablettes de chocolat</h3>
-          <p>Tablettes de chocolat noir, au lait et blanc dans des assiettes. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 8 à 20 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="petit" data-group="Chocolats">
-        <img class="product-photo" src="images/chocolats-eclats.jpg" alt="Éclats de chocolat noir et blanc sur fond clair" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Chocolats</span><h3>Éclats de chocolat</h3>
-          <p>Éclats de chocolat noir et blanc sur fond clair. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 10 à 25 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Fleurs">
-        <img class="product-photo" src="images/fleurs-marche.jpg" alt="Bouquets de roses rouges et de fleurs séchées" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Fleurs</span><h3>Fleurs du marché</h3>
-          <p>Bouquets de roses rouges et de fleurs séchées. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 40 à 70 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Fleurs">
-        <img class="product-photo" src="images/fleurs-roses.jpg" alt="Roses rouges, jaunes et orange en bouquets" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Fleurs</span><h3>Roses colorées</h3>
-          <p>Roses rouges, jaunes et orange en bouquets. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 45 à 80 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Fleurs">
-        <img class="product-photo" src="images/bouquet-pastel.jpg" alt="Bouquet de fleurs roses et blanches emballé de papier" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Fleurs</span><h3>Bouquet pastel</h3>
-          <p>Bouquet de fleurs roses et blanches emballé de papier. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 50 à 90 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="premium" data-group="Fleurs">
-        <img class="product-photo" src="images/bouquet-roses-mauves.jpg" alt="Gros bouquet de roses roses et mauves" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Fleurs</span><h3>Roses roses et mauves</h3>
-          <p>Gros bouquet de roses roses et mauves. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 70 à 120 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Fleurs">
-        <img class="product-photo" src="images/bouquet-bleu.jpg" alt="Main tenant un bouquet de fleurs bleues" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Fleurs</span><h3>Bouquet bleu</h3>
-          <p>Main tenant un bouquet de fleurs bleues. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 40 à 70 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Fleurs">
-        <img class="product-photo" src="images/bouquet-chrysanthemes.jpg" alt="Bouquet rose avec gypsophile posé sur une table" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Fleurs</span><h3>Bouquet de chrysanthèmes</h3>
-          <p>Bouquet rose avec gypsophile posé sur une table. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 35 à 60 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="premium" data-group="Téléphones">
-        <img class="product-photo" src="images/telephone-mer.jpg" alt="Main tenant un smartphone pour photographier la mer" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Téléphones</span><h3>Smartphone en photo</h3>
-          <p>Main tenant un smartphone pour photographier la mer. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 700 à 1 200 DT</div>
-          <div class="source-note">Produit importé : prix indicatif estimé, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="premium" data-group="Téléphones">
-        <img class="product-photo" src="images/samsung-bleu.jpg" alt="Téléphone Samsung bleu tenu devant des palmes" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Téléphones</span><h3>Samsung Galaxy bleu</h3>
-          <p>Téléphone Samsung bleu tenu devant des palmes. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 2 500 à 3 500 DT</div>
-          <div class="source-note">Produit importé : prix indicatif estimé, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="premium" data-group="Téléphones">
-        <img class="product-photo" src="images/iphone-rose.jpg" alt="iPhone dans une coque rose tenu à la main" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Téléphones</span><h3>iPhone avec coque rose</h3>
-          <p>iPhone dans une coque rose tenu à la main. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 2 300 à 3 500 DT</div>
-          <div class="source-note">Produit importé : prix indicatif estimé, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="premium" data-group="Téléphones">
-        <img class="product-photo" src="images/iphone-blanc.jpg" alt="Dos d'un iPhone blanc à triple capteur photo" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Téléphones</span><h3>iPhone blanc</h3>
-          <p>Dos d'un iPhone blanc à triple capteur photo. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 3 500 à 5 000 DT</div>
-          <div class="source-note">Produit importé : prix indicatif estimé, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="premium" data-group="Téléphones">
-        <img class="product-photo" src="images/samsung-flip.jpg" alt="Main tenant un téléphone Samsung pliable ouvert" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Téléphones</span><h3>Samsung pliable</h3>
-          <p>Main tenant un téléphone Samsung pliable ouvert. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 2 000 à 3 000 DT</div>
-          <div class="source-note">Produit importé : prix indicatif estimé, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="premium" data-group="Téléphones">
-        <img class="product-photo" src="images/samsung-note.jpg" alt="Téléphone Samsung bleu clair sur fond sombre" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Téléphones</span><h3>Samsung Galaxy Note</h3>
-          <p>Téléphone Samsung bleu clair sur fond sombre. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 1 200 à 1 800 DT</div>
-          <div class="source-note">Produit importé : prix indicatif estimé, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="premium" data-group="Bijoux">
-        <img class="product-photo" src="images/collier-or-buste.jpg" alt="Collier doré à pendentif en goutte sur un buste" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Bijoux</span><h3>Collier doré en goutte</h3>
-          <p>Collier doré à pendentif en goutte sur un buste. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 60 à 90 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Bijoux">
-        <img class="product-photo" src="images/collier-nacre.jpg" alt="Collier délicat posé sur un coquillage nacré" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Bijoux</span><h3>Collier sur nacre</h3>
-          <p>Collier délicat posé sur un coquillage nacré. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 40 à 60 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Bijoux">
-        <img class="product-photo" src="images/bracelet-ecrin.jpg" alt="Bracelet doré dans un écrin blanc" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Bijoux</span><h3>Bracelet en écrin</h3>
-          <p>Bracelet doré dans un écrin blanc. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 35 à 55 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Accessoires">
-        <img class="product-photo" src="images/echarpe-tricot.jpg" alt="Longue écharpe en tricot multicolore" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Accessoires</span><h3>Écharpe en tricot</h3>
-          <p>Longue écharpe en tricot multicolore. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 25 à 45 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Accessoires">
-        <img class="product-photo" src="images/cravate-bleue.jpg" alt="Cravate bleue à motifs sur fond blanc" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Accessoires</span><h3>Cravate bleue</h3>
-          <p>Cravate bleue à motifs sur fond blanc. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 20 à 40 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="premium" data-group="Accessoires">
-        <img class="product-photo" src="images/coffret-cravates.jpg" alt="Coffret ouvert contenant des cravates et des foulards" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Accessoires</span><h3>Coffret de cravates</h3>
-          <p>Coffret ouvert contenant des cravates et des foulards. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 60 à 110 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-group="Autres idées">
-        <img class="product-photo" src="images/voiture-noire.jpg" alt="Voiture noire élégante" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Autres idées</span><h3>Voiture noire</h3>
-          <p>Voiture noire élégante. Personnalisation possible selon la demande.</p>
-          <div class="price-real">Sur devis</div>
-          <div class="source-note">Prix communiqué sur devis.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Autres idées">
-        <img class="product-photo" src="images/jeu-tour.jpg" alt="Jeu de tour en bois coloré" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Autres idées</span><h3>Jeu de tour en bois</h3>
-          <p>Jeu de tour en bois coloré. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 25 à 40 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="premium" data-group="Autres idées">
-        <img class="product-photo" src="images/manette-jeu.jpg" alt="Mains tenant une manette sous une lumière violette" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Autres idées</span><h3>Manette de jeu</h3>
-          <p>Mains tenant une manette sous une lumière violette. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 160 à 230 DT</div>
-          <div class="source-note">Produit importé : prix indicatif estimé, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Coffrets">
-        <img class="product-photo" src="images/coffret-cadeau-rose.jpg" alt="Coffret hexagonal rose noué d'un ruban bleu" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Coffrets</span><h3>Coffret cadeau rose</h3>
-          <p>Coffret hexagonal rose noué d'un ruban bleu. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 40 à 80 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Coffrets">
-        <img class="product-photo" src="images/coffret-fleurs.jpg" alt="Cadeau emballé en papier kraft, décoré de roses et d'un ruban blanc" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Coffrets</span><h3>Cadeau fleuri en papier kraft</h3>
-          <p>Cadeau emballé en papier kraft, décoré de roses et d'un ruban blanc. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 25 à 45 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Bijoux">
-        <img class="product-photo" src="images/bague-doree.jpg" alt="Bague dorée sertie sur un tissu satiné rose" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Bijoux</span><h3>Bague dorée ajourée</h3>
-          <p>Bague dorée sertie sur un tissu satiné rose. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 30 à 50 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Bijoux">
-        <img class="product-photo" src="images/pendentif-vert.jpg" alt="Pendentif ovale vert ciselé avec chaîne dorée" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Bijoux</span><h3>Pendentif vert et doré</h3>
-          <p>Pendentif ovale vert ciselé avec chaîne dorée. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 45 à 70 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Bijoux">
-        <img class="product-photo" src="images/pendentif-diamant.jpg" alt="Pendentif argenté orné d'une pierre rectangulaire" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Bijoux</span><h3>Pendentif en cristal</h3>
-          <p>Pendentif argenté orné d'une pierre rectangulaire. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 50 à 80 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Bijoux">
-        <img class="product-photo" src="images/colliers-dores.jpg" alt="Trois chaînes dorées dont une avec un petit pendentif en coquillage" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Bijoux</span><h3>Colliers dorés superposés</h3>
-          <p>Trois chaînes dorées dont une avec un petit pendentif en coquillage. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 35 à 55 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="petit" data-group="Diplômes">
-        <img class="product-photo" src="images/diplome-toque.jpg" alt="Mains tenant une toque de diplômé et un diplôme noué d'un ruban rouge" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Diplômes</span><h3>Toque et diplôme</h3>
-          <p>Mains tenant une toque de diplômé et un diplôme noué d'un ruban rouge. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 15 à 30 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="petit" data-group="Diplômes">
-        <img class="product-photo" src="images/diplomes-rubans.jpg" alt="Trois diplômés tenant leurs diplômes roulés avec des rubans rouges" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Diplômes</span><h3>Trois diplômes à ruban rouge</h3>
-          <p>Trois diplômés tenant leurs diplômes roulés avec des rubans rouges. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 15 à 25 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Gâteaux">
-        <img class="product-photo" src="images/gateau-bleu.jpg" alt="Gâteau décoré de crème bleue et mauve sur un plateau en bois" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Gâteaux</span><h3>Gâteau pastel bleu et mauve</h3>
-          <p>Gâteau décoré de crème bleue et mauve sur un plateau en bois. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 45 à 70 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="premium" data-group="Gâteaux">
-        <img class="product-photo" src="images/gateau-anniversaire.jpg" alt="Jeune femme souriante devant un gâteau d'anniversaire avec bougie étincelante" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Gâteaux</span><h3>Gâteau d'anniversaire fleuri</h3>
-          <p>Jeune femme souriante devant un gâteau d'anniversaire avec bougie étincelante. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 120 à 250 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Bijoux">
-        <img class="product-photo" src="images/bijoux-bagues.jpg" alt="Deux bagues dans leurs écrins en forme de cœur" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Bijoux</span><h3>Bagues en écrin</h3>
-          <p>Deux bagues dans leurs écrins en forme de cœur. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 40 à 70 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Tasses & gobelets">
-        <img class="product-photo" src="images/tasse-fleurie-cafe.jpg" alt="Tasse et soucoupe à fleurs peintes remplie de café" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Tasses & gobelets</span><h3>Tasse fleurie et son café</h3>
-          <p>Tasse et soucoupe à fleurs peintes remplie de café. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 25 à 35 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="moyen" data-group="Tasses & gobelets">
-        <img class="product-photo" src="images/cafe-latte-verre.jpg" alt="Deux latte dans des tasses en verre sur un plateau en bois" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Tasses & gobelets</span><h3>Duo de tasses en verre</h3>
-          <p>Deux latte dans des tasses en verre sur un plateau en bois. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 30 à 45 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="petit" data-group="Tasses & gobelets">
-        <img class="product-photo" src="images/gobelet-bleu-calligraphie.jpg" alt="Gobelet bleu orné de calligraphie arabe" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Tasses & gobelets</span><h3>Gobelet bleu calligraphié</h3>
-          <p>Gobelet bleu orné de calligraphie arabe. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 8 à 12 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="petit" data-group="Tasses & gobelets">
-        <img class="product-photo" src="images/gobelet-noir-calligraphie.jpg" alt="Gobelet noir orné de calligraphie arabe" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Tasses & gobelets</span><h3>Gobelet noir calligraphié</h3>
-          <p>Gobelet noir orné de calligraphie arabe. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 8 à 12 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-category="petit" data-group="Tasses & gobelets">
-        <img class="product-photo" src="images/cafe-noir-ordinateur.jpg" alt="Tasse de café noir près d'un ordinateur portable" loading="lazy" style="aspect-ratio:4/5;object-fit:cover">
-        <div class="product-body">
-          <span class="tag">Tasses & gobelets</span><h3>Café noir du matin</h3>
-          <p>Tasse de café noir près d'un ordinateur portable. Personnalisation possible selon la demande.</p>
-          <div class="price-real">≈ 12 à 18 DT</div>
-          <div class="source-note">Prix indicatif estimé selon le marché tunisien, à confirmer.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-group="Accessoires" data-category="petit">
-        <img class="product-photo" src="images/keychain.svg" alt="Illustration d'un porte-clés personnalisé">
-        <div class="product-body">
-          <span class="tag">Petit budget</span><h3>Porte-clés personnalisé</h3>
-          <p>Un petit cadeau personnalisable avec un prénom, une photo ou un message selon le modèle.</p>
-          <div class="price-real">≈ 5 à 15 DT</div>
-          <div class="source-note">Fourchette observée chez plusieurs vendeurs tunisiens.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-group="Tasses & gobelets" data-category="moyen">
-        <img class="product-photo" src="images/mug.svg" alt="Illustration d'un mug personnalisé">
-        <div class="product-body">
-          <span class="tag">Budget moyen</span><h3>Mug personnalisé</h3>
-          <p>Mug avec photo ou texte, adapté à un anniversaire, une fête ou une attention personnelle.</p>
-          <div class="price-real">≈ 19 à 23 DT</div>
-          <div class="source-note">Prix observés sur des offres tunisiennes de mugs personnalisés.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-group="Bijoux" data-category="moyen">
-        <img class="product-photo" src="images/bracelet.svg" alt="Illustration d'un bracelet personnalisé">
-        <div class="product-body">
-          <span class="tag">Budget moyen</span><h3>Bracelet personnalisé</h3>
-          <p>Un cadeau personnel pour un couple, un ami ou un membre de la famille.</p>
-          <div class="price-real">≈ 45 DT</div>
-          <div class="source-note">Exemple de prix observé pour un bracelet personnalisé.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-group="Bijoux" data-category="premium">
-        <img class="product-photo" src="images/collier.svg" alt="Illustration d'un collier personnalisé">
-        <div class="product-body">
-          <span class="tag">Premium</span><h3>Collier personnalisé</h3>
-          <p>Collier personnalisable, notamment avec photo ou gravure selon le modèle.</p>
-          <div class="price-real">≈ 65 à 75 DT</div>
-          <div class="source-note">Prix observés sur des modèles personnalisés en Tunisie.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-group="Coffrets" data-category="premium">
-        <img class="product-photo" src="images/coffret-stylo.svg" alt="Illustration d'un coffret avec stylo">
-        <div class="product-body">
-          <span class="tag">Coffret</span><h3>Coffret bloc-notes + stylo</h3>
-          <p>Une idée élégante pour un cadeau personnel ou professionnel.</p>
-          <div class="price-real">≈ 74 DT</div>
-          <div class="source-note">Prix observé pour un coffret personnalisé en Tunisie.</div>
-        </div>
-      </article>
-
-      <article class="card product-card" data-group="Accessoires" data-category="premium">
-        <img class="product-photo" src="images/portefeuille.svg" alt="Illustration d'un portefeuille personnalisé">
-        <div class="product-body">
-          <span class="tag">Premium</span><h3>Portefeuille personnalisé</h3>
-          <p>Un cadeau utile et personnalisé, adapté notamment aux cadeaux pour homme.</p>
-          <div class="price-real">≈ 69 DT</div>
-          <div class="source-note">Prix observé pour un portefeuille personnalisé en Tunisie.</div>
-        </div>
-      </article>
-    </div>
+    <div class="grid-3" id="productGrid"></div>
   </div>
 </section>
-</main><footer><div class="container footer-grid"><div><div class="footer-title">MEMORA</div><p>Pour ceux qui expriment leurs émotions par un cadeau.</p></div><div><div class="footer-title">Navigation</div><p><a href="index.html">Accueil</a></p><p><a href="produits.html">Cadeaux</a></p><p><a href="a-propos.html">À propos</a></p><p><a href="contact.html">Contact</a></p></div><div><div class="footer-title">Contact</div><p>📧 nourdouzi2007@gmail.com</p><p>📸 Instagram : <a href="https://www.instagram.com/Douzi8314/" target="_blank" rel="noopener">@Douzi8314</a></p><p>💬 WhatsApp : 23 109 233</p></div></div><div class="container copyright">© 2026 MEMORA — Projet étudiant.</div></footer><button class="top" aria-label="Retour en haut">↑</button><script src="script.js"></script></body></html>
+</main>
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-title">MEMORA</div>
+      <p>Pour ceux qui expriment leurs émotions par un cadeau.</p>
+    </div>
+    <div>
+      <div class="footer-title">Navigation</div>
+      <p><a href="index.html">Accueil</a></p>
+      <p><a href="produits.html">Cadeaux</a></p>
+      <p><a href="a-propos.html">À propos</a></p>
+      <p><a href="contact.html">Contact</a></p>
+    </div>
+    <div>
+      <div class="footer-title">Contact</div>
+      <p>📧 nourdouzi2007@gmail.com</p>
+      <p>💬 WhatsApp : 23 109 233</p>
+    </div>
+  </div>
+  <div class="container copyright">© 2026 MEMORA — Projet étudiant.</div>
+</footer>
+<button class="top" aria-label="Retour en haut">↑</button>
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script defer src="supabase-client.js"></script>
+<script defer src="supabase-shop.js"></script>
+<script defer src="script.js"></script>
+</body>
+</html>

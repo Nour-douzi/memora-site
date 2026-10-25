@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inscription | MEMORA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="signup">
+<header>
+  <div class="container nav">
+    <a class="logo" href="index.html">MEM<span>O</span>RA</a>
+    <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="produits.html">Cadeaux</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="panier.html">Panier (<span id="cart-count">0</span>)</a></li>
+      <li><a class="active" href="login.html" id="nav-account">Connexion</a></li>
+      <li id="nav-admin" hidden><a href="admin.html">Admin</a></li>
+    </ul>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">Accueil → Inscription</div>
+    <h1>Créer un compte</h1>
+    <p class="lead">Un e-mail de confirmation sera envoyé par Supabase. Aucune donnée bancaire n'est demandée.</p>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="card auth-card">
+      <div id="authFlash" class="flash" hidden></div>
+      <form id="signupForm">
+        <label for="signupFirst">Prénom</label>
+        <input id="signupFirst" type="text" required>
+        <label for="signupEmail">E-mail</label>
+        <input id="signupEmail" type="email" required>
+        <label for="signupPassword">Mot de passe (6 caractères minimum)</label>
+        <input id="signupPassword" type="password" minlength="6" required>
+        <button class="btn" type="submit">S'inscrire</button>
+      </form>
+      <p class="small" style="margin-top:14px">Déjà un compte ? <a href="login.html">Se connecter</a></p>
+    </div>
+  </div>
+</section>
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script defer src="supabase-client.js"></script>
+<script defer src="supabase-shop.js"></script>
+<script defer src="script.js"></script>
+</body>
+</html>

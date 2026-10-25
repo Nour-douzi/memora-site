@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confirmation d'e-mail | MEMORA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="verification">
+<header>
+  <div class="container nav">
+    <a class="logo" href="index.html">MEM<span>O</span>RA</a>
+    <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="produits.html">Cadeaux</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="panier.html">Panier (<span id="cart-count">0</span>)</a></li>
+      <li><a href="login.html" id="nav-account">Connexion</a></li>
+      <li id="nav-admin" hidden><a href="admin.html">Admin</a></li>
+    </ul>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">Accueil → Vérification</div>
+    <h1>Confirmez votre e-mail</h1>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="card auth-card">
+      <p id="verifyStatus">Ouvrez le message envoyé par Supabase et cliquez sur le lien de confirmation. Pensez à vérifier les courriers indésirables.</p>
+      <p class="small">Ensuite : <a href="login.html">page de connexion</a>.</p>
+    </div>
+  </div>
+</section>
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script defer src="supabase-client.js"></script>
+<script defer src="supabase-shop.js"></script>
+<script defer src="script.js"></script>
+</body>
+</html>
