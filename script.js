@@ -59,13 +59,28 @@ if (budgetForm && budgetAmount && budgetResult) {
     }
     budgetResult.className = "budget-result show";
     budgetResult.innerHTML = "<strong>Suggestion MEMORA :</strong> " + message;
-  });
-}
 
-const GROUPES = ["Tous", "Coffrets", "Bijoux", "Parfums", "Fleurs", "Chocolats", "Téléphones", "Tasses & gobelets", "Gâteaux", "Diplômes", "Accessoires", "Autres idées"];
+  // إخفاء المنتجات التي تفوق الميزانية المدخلة
+  const productCards = document.querySelectorAll(".product-card");
+  document.querySelectorAll(".product-card").forEach(c => { const m = c.textContent.match(/(\d+(?:[.,]\d+)?)\s*DT/); const p = m ? parseFloat(m[1].replace(",", ".")) : null; c.style.display = (p !== null && p > budget) ? "none" : ""; });
+  productCards.forEach(card => {
+      const priceElement = card.querySelector(".product-price");
+      if (priceElement) {
+          const price = parseFloat(priceElement.textContent);
+          if (price > budget) {
+              card.style.display = "none";
+          } else {
+              card.style.display = "block";
+          }
+        }      
+      });
+    });
+  
+const GROUPES = ["Tous", "Coffrets", "Bijoux", "Parfums", "Fleurs", "Chocolats", "Téléphones", "Tasses & gobelets"];
 const groupeActif = new URLSearchParams(location.search).get("groupe") || "Tous";
 const entete = document.querySelector("header");
-if (entete) {
+
+
   const nav = document.createElement("nav");
   nav.className = "catbar";
   nav.setAttribute("aria-label", "Groupes de produits");

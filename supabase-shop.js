@@ -1,3 +1,4 @@
+var groupeActif = new URLSearchParams(location.search).get("groupe") || "Tous";
 const SHOP = {
   page: document.body?.dataset?.page || "",
   session: null,
