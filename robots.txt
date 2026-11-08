@@ -4,4 +4,4 @@ Disallow: /admin.html
 Disallow: /panier.html
 Disallow: /login.html
 
-Sitemap: https://memora.vercel.app/sitemap.xml
+Sitemap: https://memora-site-yrog.vercel.app/sitemap.xml
